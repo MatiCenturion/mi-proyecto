@@ -12,10 +12,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.PrimerApp"
         tools:targetApi="31">
-
-
         <activity
-            android:name=".ImcCalculator.ImcCalculatorActivity"
+            android:name=".imcCalculator.ResultImcActivity"
+            android:exported="false" />
+        <activity
+            android:name=".imcCalculator.ImcCalculatorActivity"
             android:exported="false" />
         <activity
             android:name=".MenuActivity"
@@ -31,7 +32,7 @@
             android:exported="false" />
         <activity
             android:name=".firsApp.firstAppActivity"
-            android:exported="true"/>
+            android:exported="true" />
     </application>
 
 </manifest>

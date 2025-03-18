@@ -8,7 +8,10 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.primerapp.firsApp.firstAppActivity
-import com.example.primerapp.ImcCalculator.ImcCalculatorActivity
+import com.example.primerapp.imcCalculator.ImcCalculatorActivity
+
+
+
 
 class MenuActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

@@ -11,13 +11,13 @@
 
     <Button
         android:id="@+id/btnIMCApp"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="IMC App" />
 
     <Button
         android:id="@+id/btnSaludApp"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="SaludApp" />
 

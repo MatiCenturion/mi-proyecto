@@ -8,7 +8,7 @@
     android:background="@color/background_app"
     android:paddingHorizontal="16dp"
     android:paddingVertical="32dp"
-    tools:context=".ImcCalculator.ImcCalculatorActivity"
+    tools:context=".imcCalculator.ImcCalculatorActivity"
 
 
     >
@@ -103,7 +103,7 @@
         app:layout_constraintTop_toBottomOf="@id/viewMale">
 
         <androidx.appcompat.widget.LinearLayoutCompat
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_margin="16dp"
@@ -123,6 +123,7 @@
 
             <TextView
                 android:id="@+id/tvHeight"
+                android:layout_gravity="center"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="120 cm"
@@ -277,5 +278,13 @@
 
 
     </androidx.cardview.widget.CardView>
+    <Button
+        android:id="@+id/btnCalculate"
+        android:layout_width="0dp"
+        android:text="@string/calculate"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_height="80dp"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
