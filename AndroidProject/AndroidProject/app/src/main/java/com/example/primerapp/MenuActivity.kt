@@ -9,8 +9,7 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.primerapp.firsApp.firstAppActivity
 import com.example.primerapp.imcCalculator.ImcCalculatorActivity
-
-
+import com.example.primerapp.superheroapp.SuperHeroListActivity
 
 
 class MenuActivity : AppCompatActivity() {
@@ -21,6 +20,9 @@ class MenuActivity : AppCompatActivity() {
 
         val btnSaludApp = findViewById<Button>(R.id.btnSaludApp)
         val btnIMCApp = findViewById<Button>(R.id.btnIMCApp)
+        val  btnSuperHero = findViewById<Button>(R.id.btnSuperHero)
+
+        btnSuperHero.setOnClickListener{navigateToSuperHeroApp()}
         btnSaludApp.setOnClickListener{ navigateToSaludApp() }
         btnIMCApp.setOnClickListener{navigateToImcApp()}
 
@@ -31,6 +33,12 @@ class MenuActivity : AppCompatActivity() {
             insets
         }
     }
+
+    private fun navigateToSuperHeroApp() {
+        val intent = Intent(this, SuperHeroListActivity::class.java )
+        startActivity(intent)
+    }
+
     private fun navigateToSaludApp() {
         val intent = Intent(this, firstAppActivity::class.java)
         startActivity(intent)
