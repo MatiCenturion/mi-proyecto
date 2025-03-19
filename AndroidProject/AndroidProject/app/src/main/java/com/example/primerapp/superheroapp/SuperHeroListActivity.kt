@@ -25,6 +25,7 @@ import retrofit2.create
 class SuperHeroListActivity : AppCompatActivity() {
     private lateinit var binding: ActivitySuperHeroListBinding
     private lateinit var retrofit: Retrofit
+
     private lateinit var adapter: SuperheroAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -63,7 +64,8 @@ class SuperHeroListActivity : AppCompatActivity() {
         private fun searchByName(query: String) {
             binding.progressBar.isVisible = true
             CoroutineScope(Dispatchers.IO).launch {
-                val myResponse: Response<SuperHeroDataResponse> = retrofit.create(ApiService::class.java).getSuperheroes(query)
+                val myResponse: Response<SuperHeroDataResponse> =
+                    retrofit.create(ApiService::class.java).getSuperheroes(query)
                 if(myResponse.isSuccessful){
                     Log.i("ivanDev", "funciona")
                     val response: SuperHeroDataResponse? = myResponse.body()

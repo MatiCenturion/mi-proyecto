@@ -2,12 +2,12 @@ package com.example.primerapp.superheroapp
 
 import com.google.gson.annotations.SerializedName
 
-data class SuperheroDetailResponse(
+data class SuperHeroDetailResponse(
     @SerializedName("name") val name: String,
-    @SerializedName("powerstats") val powerstats: PowerstatsResponse,
-    @SerializedName("iamge") val image: SuperheroImageDetailResponse
+    @SerializedName("powerstats") val powerstats: PowerStatsResponse,
+    @SerializedName("image") val image: SuperheroImageDetailResponse
 )
-data class PowerstatsResponse(
+data class PowerStatsResponse(
     @SerializedName("intelligence") val intelligence: String,
     @SerializedName("strength") val strength: String,
     @SerializedName("speed") val speed: String,

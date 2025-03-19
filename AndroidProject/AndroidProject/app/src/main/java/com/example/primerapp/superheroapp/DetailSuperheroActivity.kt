@@ -8,6 +8,7 @@ import androidx.core.view.WindowInsetsCompat
 import com.example.primerapp.R
 import com.example.primerapp.databinding.ActivityDetailSuperheroBinding
 import com.squareup.picasso.Picasso
+import com.squareup.picasso.Picasso.*
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -29,7 +30,7 @@ class DetailSuperheroActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         enableEdgeToEdge()
-        setContentView(R.layout.activity_detail_superhero)
+       // setContentView(R.layout.activity_detail_superhero)
         val id: String = intent.getStringExtra(EXTRA_ID).orEmpty()
         getSuperheroInformation(id)
 
@@ -45,14 +46,14 @@ class DetailSuperheroActivity : AppCompatActivity() {
             val superheroDetail =
                 getRetrofit().create(ApiService::class.java).getSuperheroDetail(id)
 
-            if (superheroDetail.body() != null) {
+            if(superheroDetail.body() != null){
                 runOnUiThread { createUI(superheroDetail.body()!!) }
             }
         }
     }
 
-    private fun createUI(superhero: SuperheroDetailResponse) {
-        Picasso.get().load(superhero.image.url).into(binding.ivSuperhero)
+    private fun createUI(superhero: SuperHeroDetailResponse) {
+        get().load(superhero.image.url).into(binding.ivSuperhero)
     }
 
     private fun getRetrofit(): Retrofit {
