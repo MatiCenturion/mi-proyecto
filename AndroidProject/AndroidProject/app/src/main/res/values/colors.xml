@@ -19,4 +19,7 @@
     <color name="peso_normal">#4CAF50</color>
     <color name="peso_sobrepeso">#FF5722</color>
     <color name="obesidad">#FF1100</color>
+
+    <!--SuperheroApp -->
+    <color name="superhero_item_name">#8B3F2BAF</color>
 </resources>
