@@ -16,9 +16,11 @@ import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.lifecycle.viewmodel.ViewModelFactoryDsl
 import com.example.mvvmlogin.R
 import kotlinx.coroutines.launch
 
+@ViewModelFactoryDsl
 @Composable
 fun LoginScreen(viewModel: LoginViewModel) {
     Box(
@@ -117,8 +119,7 @@ fun EmailField(email: String, onTextFieldChanged: (String) -> Unit) {
         value = email,
         onValueChange = { onTextFieldChanged(it) },
         modifier = Modifier
-            .fillMaxWidth()
-            .clickable { },
+            .fillMaxWidth(),
         placeholder = { Text(text = "Email") },
         keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Email),
         singleLine = true,
