@@ -1,5 +1,4 @@
-
-package com.example.catchmegamescreen.catchMeGame
+package com.example.mvvmlogin.ui.theme.login.catchMeGame
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable

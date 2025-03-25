@@ -1,25 +1,3 @@
-//package com.example.mvvmlogin
-//
-//import android.os.Bundle
-//import androidx.activity.ComponentActivity
-//import androidx.activity.compose.setContent
-//import androidx.activity.enableEdgeToEdge
-//import com.example.mvvmlogin.ui.theme.MVVMLOGINTheme
-//import com.example.mvvmlogin.ui.theme.login.ui.LoginScreen
-//import com.example.mvvmlogin.ui.theme.login.ui.LoginViewModel
-//
-//class MainActivity : ComponentActivity() {
-//    override fun onCreate(savedInstanceState: Bundle?) {
-//        super.onCreate(savedInstanceState)
-//        enableEdgeToEdge()
-//        setContent {
-//            MVVMLOGINTheme {
-//                LoginScreen(LoginViewModel())
-//            }
-//        }
-//    }
-//}
-
 package com.example.mvvmlogin
 
 import android.os.Bundle
@@ -31,11 +9,13 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import com.example.catchmegamescreen.catchMeGame.GameScreen
 import com.example.mvvmlogin.ui.theme.MVVMLOGINTheme
 import com.example.mvvmlogin.ui.theme.login.menu.MenuScreen
 import com.example.mvvmlogin.ui.theme.login.ui.LoginScreen
 import com.example.mvvmlogin.ui.theme.login.ui.LoginViewModel
+import com.example.mvvmlogin.ui.theme.login.catchMeGame.GameScreen
+import com.example.mvvmlogin.ui.theme.login.catchMeGame.GameViewModel
+
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -64,11 +44,14 @@ class MainActivity : ComponentActivity() {
                             )
                         }
                         composable("game") {
-                            // Obtenemos el contexto desde la composición
-                            val context = LocalContext.current
-                            // Instanciamos el GameViewModel pasándole el contexto
-                            val gameViewModel = com.example.catchmegamescreen.catchMeGame.GameViewModel(context)
+                            val context = LocalContext.current // Obtiene el contexto de la composición
+                            val gameViewModel = GameViewModel(context) // Pasa el contexto al ViewModel
                             GameScreen(viewModel = gameViewModel)
+                        }
+                        composable( "apiSolicitud") {
+                            val context = LocalContext.current
+                            val RickAndMortyViewModel = RickAndMortyViewModel(context)
+                            RickAndMortyScreen(viewModel = RickAndMortyViewModel)
                         }
                     }
                 }
