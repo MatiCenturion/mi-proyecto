@@ -159,7 +159,7 @@ class GameViewModel(private val context: Context) : ViewModel() {
 
         viewModelScope.launch {
             while (gameRunning) {
-                delay(500L)
+                delay(1000L)
                 updateBallPosition()
             }
         }

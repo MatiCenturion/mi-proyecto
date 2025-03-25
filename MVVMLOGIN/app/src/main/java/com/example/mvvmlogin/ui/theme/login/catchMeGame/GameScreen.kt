@@ -136,9 +136,10 @@ fun GameScreen(viewModel: GameViewModel) {
         ) {
             Ball(
                 ballOffset = ballOffset,
-                ballSize = viewModel.ballSize,
+                ballSize = viewModel.ballSize.dp,  // convierte el Int a Dp
                 onClick = { viewModel.onBallClicked() }
             )
+
         }
     }
 
