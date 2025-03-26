@@ -18,7 +18,8 @@ import androidx.compose.ui.unit.dp
 
 @Composable
 fun MenuScreen(
-    onGameSelected: () -> Unit
+    onGameSelected: () -> Unit,
+    onRickAndMortySelected: () -> Unit
 ) {
     Column(
         modifier = Modifier
@@ -36,6 +37,15 @@ fun MenuScreen(
                 .height(48.dp)
         ) {
             Text(text = "Jugar CatchMe")
+        }
+        Spacer(modifier = Modifier.height(24.dp))
+        Button(
+            onClick = onRickAndMortySelected,
+            modifier = Modifier
+                .fillMaxWidth()
+                .height(48.dp)
+        ) {
+            Text(text = "Ver Rick and Morty")
         }
     }
 }
